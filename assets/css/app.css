@@ -1,53 +1,82 @@
+/* Ensure images scale properly */
 img {
-    max-width: 100%;
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* Style SVGs to inherit text color */
 svg {
-    fill: currentColor;
+  fill: currentColor;
 }
 
+/* Frontmatter section styling */
 .frontmatter {
-    position: relative;
-    height: 70vh;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center text content */
+  overflow: hidden; /* Prevent overflow */
 }
 
+/* Background styling for frontmatter */
 .frontmatter-background {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: #000;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #000;
+  opacity: 0.7; /* Add opacity for better text visibility */
 }
 
+/* Divider styling in frontmatter */
 .frontmatter-divider {
-    max-width: 25rem;
-    border-top: 1px solid #fff;
+  max-width: 25rem;
+  margin: 0 auto; /* Center the divider */
+  border-top: 1px solid #fff;
+  opacity: 0.8; /* Slightly reduce opacity for a softer look */
 }
 
+/* Text content styling in frontmatter */
 .frontmatter-content > h1, .frontmatter-content > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-}
-.frontmatter-content .btn-frontmatter {
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  color: #fff; /* Ensure text is readable */
+  margin: 0.5rem 0; /* Add some spacing between elements */
 }
 
-/* Used to have ids navbar height before the sections */
+/* Button styling in frontmatter */
+.frontmatter-content .btn-frontmatter {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  background-color: #fff; /* Stand out button */
+  color: #000; /* Contrast text color */
+  padding: 0.75rem 1.5rem; /* Add padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add border radius */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.frontmatter-content .btn-frontmatter:hover {
+  background-color: #f0f0f0; /* Lighten button on hover */
+}
+
+/* Prenav section to offset the navbar height */
 .prenav {
   position: absolute;
   margin-top: -3.625rem;
+  width: 100%; /* Ensure it takes full width */
+  height: 3.625rem; /* Maintain height for consistency */
 }
 
+/* Dark mode styling */
 @media (prefers-color-scheme: dark) {
   .border-bottom, .border {
-    border-color: #495057 !important;
+      border-color: #495057 !important;
   }
   .bg-light {
-    background-color: #272b30 !important;
+      background-color: #272b30 !important;
   }
 }
